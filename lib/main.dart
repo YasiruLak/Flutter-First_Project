@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 
+
 void main(){
   runApp(
       DevicePreview(
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget{
       title: "Flutter Demo",
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        brightness: Brightness.dark,
       ),
       home: MyHomePage(),
     );
@@ -86,8 +88,8 @@ class MyHomePage extends StatelessWidget{
         body: TabBarView(
           children: [
             tab1(),
-            Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
+            const Icon(Icons.directions_transit),
+            tab3(),
           ],
         ),
       ),
@@ -98,8 +100,31 @@ class MyHomePage extends StatelessWidget{
 
 Widget tab1(){
   return Container(
-    child: Center(
-      child: Text("Copyright By Yasiru Dahanayaka"),
+
+    color: Colors.lightBlue,
+    child: const Center(
+      child: Text("Copyright By Yasiru Dahanayaka",),
+    ),
+  );
+}
+
+
+
+Widget tab3(){
+  return Scaffold(
+    body: Container(
+      // padding: const EdgeInsets.all(20.0),
+      width: double.infinity,
+      height: 65,
+      alignment: Alignment.center,
+      color: Colors.black54,
+      child: const Text(
+        'Flutter Testing App',
+        style: TextStyle(
+          fontSize: 20.0,
+          fontFamily: 'Ubuntu sans-serif',
+        ),
+      ),
     ),
   );
 }
