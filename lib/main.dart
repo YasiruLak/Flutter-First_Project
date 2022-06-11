@@ -47,7 +47,7 @@ class MyHomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Flutter"),
@@ -80,6 +80,9 @@ class MyHomePage extends StatelessWidget{
               Tab(icon: Icon(Icons.directions_bike),
               text: "Bicycle",
               ),
+              Tab(icon: Icon(Icons.help_center),
+                text: "Help",
+              ),
             ],
           ),
           elevation: 20.0,
@@ -88,8 +91,9 @@ class MyHomePage extends StatelessWidget{
         body: TabBarView(
           children: [
             tab1(),
-            const Icon(Icons.directions_transit),
+            tab2(),
             tab3(),
+            const Icon(Icons.directions_transit),
           ],
         ),
       ),
@@ -108,7 +112,30 @@ Widget tab1(){
   );
 }
 
+Widget tab2(){
+  return Scaffold(
+    body: Container(
+      color: Colors.blue,
+      height: 250,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const <Widget>[
+          Text('Testing One',
+            style: TextStyle(fontSize: 18),
+          ),
+          Text('Testing Two',
+            style: TextStyle(fontSize: 18),
+          ),
+          Text('Testing Three',
+            style: TextStyle(fontSize: 18),
+          ),
 
+        ],
+      ),
+    ),
+  );
+}
 
 Widget tab3(){
   return Scaffold(
