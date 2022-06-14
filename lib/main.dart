@@ -111,7 +111,8 @@ Widget tab1(){
 
     color: Colors.lightBlue,
     child: const Center(
-      child: Text("Copyright By Yasiru Dahanayaka"),
+      child: Text("Copyright By Yasiru Dahanayaka",
+      style: TextStyle(color: Colors.white),),
     ),
   );
 }
@@ -143,13 +144,13 @@ Widget tab2(){
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const <Widget>[
           Text('Testing One',
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 18,color: Colors.white),
           ),
           Text('Testing Two',
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 18,color: Colors.white),
           ),
           Text('Testing Three',
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 18,color: Colors.white),
           ),
 
         ],
@@ -169,6 +170,7 @@ Widget tab3(){
       child: const Text(
         'Flutter Testing App',
         style: TextStyle(
+        color: Colors.white,
           fontSize: 20.0,
           fontFamily: 'Ubuntu sans-serif',
         ),
