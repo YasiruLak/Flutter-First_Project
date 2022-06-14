@@ -1,8 +1,10 @@
-import 'package:flutter/cupertino.dart';
+import 'package:first_flutter_project/screens/secondScreen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+
 class MyHomePage extends StatefulWidget {
+
   const MyHomePage({Key? key}) : super(key: key);
 
   @override
@@ -10,8 +12,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: TabBarView(
           children: [
             tab1(),
-            tab2(),
+            tab2(context),
             tab3(),
             tab4(),
           ],
@@ -95,7 +95,7 @@ Widget tab4(){
   );
 }
 
-Widget tab2(){
+Widget tab2(BuildContext context){
 
   int count = 0;
 
@@ -110,19 +110,27 @@ Widget tab2(){
     body: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const <Widget>[
-          Text('You Have Pushed Button Times',
+        children: <Widget>[
+          const Text('You Have Pushed Button Times',
             style: TextStyle(fontSize: 18,color: Colors.blueAccent),
           ),
           Text(
-            "0",
-            style: TextStyle(fontSize: 28,color: Colors.blueAccent),
+            count.toString(),
+            style: const TextStyle(fontSize: 28,color: Colors.blueAccent),
           ),
         ],
       ),
     ),
     floatingActionButton: FloatingActionButton(
-      onPressed: increment,
+      onPressed: (){
+        // Navigator.of(context).push(MaterialPageRoute(
+        //   builder: (_){
+        //     return const SecondScreen();
+        //   }
+        // ));
+        Navigator.of(context).pushNamed("/second");
+      },
+      tooltip: 'Increment',
       child: const Icon(Icons.add),
     ),
   );
