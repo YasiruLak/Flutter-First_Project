@@ -9,13 +9,12 @@ void main(){
   runApp(
       DevicePreview(
         enabled: !kReleaseMode,
-        builder: (context) => const MyApp(), // Wrap your app
+        builder: (context) =>  MyApp(), // Wrap your app
       )
   );
 }
 
 class MyApp extends StatelessWidget{
-  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +28,10 @@ class MyApp extends StatelessWidget{
         primarySwatch: Colors.blue,
         brightness: Brightness.light,
       ),
-      home: const MyHomePage(),
-      routes: <String,WidgetBuilder>{
-        '/second': (context) => const SecondScreen(),
-      },
+      home:  MyHomePage(),
+      // routes: <String,WidgetBuilder>{
+      //   '/second': (context) => SecondScreen("CCSL"),
+      // },
     );
   }
 

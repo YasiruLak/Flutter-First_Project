@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
 
-  const MyHomePage({Key? key}) : super(key: key);
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -19,18 +17,18 @@ class _MyHomePageState extends State<MyHomePage> {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Flutter"),
+          title:  Text("Flutter"),
           leading: IconButton(
-            icon: const Icon(Icons.menu),
+            icon:  Icon(Icons.menu),
             onPressed: (){},
           ),
           actions: <Widget>[
             IconButton(
-              icon: const Icon(Icons.search),
+              icon:  Icon(Icons.search),
               onPressed: (){},
             ),
             IconButton(
-              icon: const Icon(Icons.more_vert),
+              icon:  Icon(Icons.more_vert),
               onPressed: (){},
             ),
           ],
@@ -38,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
             "assets/main2.jpg",
             fit: BoxFit.cover,
           ),
-          bottom: const TabBar(
+          bottom:  TabBar(
             tabs: [
               Tab(icon: Icon(Icons.directions_car),
                 text: "Car",
@@ -74,7 +72,7 @@ Widget tab1(){
   return Container(
 
     color: Colors.lightBlue,
-    child: const Center(
+    child:  Center(
       child: Text("Copyright By Yasiru Dahanayaka",
         style: TextStyle(color: Colors.white),),
     ),
@@ -83,13 +81,13 @@ Widget tab1(){
 
 Widget tab4(){
   return Container(
-    decoration: const BoxDecoration(
+    decoration:  BoxDecoration(
       color: Colors.white,
       image: DecorationImage(
           image: AssetImage("assets/main.jpg"),
           fit: BoxFit.fitWidth),
     ),
-    child: const Center(
+    child:  Center(
 
     ),
   );
@@ -111,27 +109,27 @@ Widget tab2(BuildContext context){
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const Text('You Have Pushed Button Times',
+           Text('You Have Pushed Button Times',
             style: TextStyle(fontSize: 18,color: Colors.blueAccent),
           ),
           Text(
             count.toString(),
-            style: const TextStyle(fontSize: 28,color: Colors.blueAccent),
+            style:  TextStyle(fontSize: 28,color: Colors.blueAccent),
           ),
         ],
       ),
     ),
     floatingActionButton: FloatingActionButton(
       onPressed: (){
-        // Navigator.of(context).push(MaterialPageRoute(
-        //   builder: (_){
-        //     return const SecondScreen();
-        //   }
-        // ));
-        Navigator.of(context).pushNamed("/second");
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (_){
+            return SecondScreen("CCSL");
+          }
+        ));
+        // Navigator.of(context).pushNamed("/second");
       },
       tooltip: 'Increment',
-      child: const Icon(Icons.add),
+      child:  Icon(Icons.add),
     ),
   );
 }
@@ -144,7 +142,7 @@ Widget tab3(){
       height: 65,
       alignment: Alignment.center,
       color: Colors.lightBlue,
-      child: const Text(
+      child:  Text(
         'Flutter Testing App',
         style: TextStyle(
           color: Colors.white,
