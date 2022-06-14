@@ -9,7 +9,7 @@ void main(){
   runApp(
       DevicePreview(
         enabled: !kReleaseMode,
-        builder: (context) => MyApp(), // Wrap your app
+        builder: (context) => const MyApp(), // Wrap your app
       )
   );
 }
@@ -25,6 +25,8 @@ void main(){
 // }
 
 class MyApp extends StatelessWidget{
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,15 +37,17 @@ class MyApp extends StatelessWidget{
       title: "Flutter Demo",
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 
 }
 
 class MyHomePage extends StatelessWidget{
+  const MyHomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -93,7 +97,7 @@ class MyHomePage extends StatelessWidget{
             tab1(),
             tab2(),
             tab3(),
-            const Icon(Icons.directions_transit),
+            tab4(),
           ],
         ),
       ),
@@ -107,7 +111,22 @@ Widget tab1(){
 
     color: Colors.lightBlue,
     child: const Center(
-      child: Text("Copyright By Yasiru Dahanayaka",),
+      child: Text("Copyright By Yasiru Dahanayaka"),
+    ),
+  );
+}
+
+Widget tab4(){
+  return Container(
+
+    decoration: const BoxDecoration(
+      color: Colors.white,
+      image: DecorationImage(
+          image: AssetImage("assets/main.jpg"),
+          fit: BoxFit.fitWidth),
+    ),
+    child: const Center(
+
     ),
   );
 }
@@ -115,8 +134,10 @@ Widget tab1(){
 Widget tab2(){
   return Scaffold(
     body: Container(
+
       color: Colors.blue,
       height: 250,
+
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
