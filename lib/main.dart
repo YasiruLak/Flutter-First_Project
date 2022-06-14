@@ -45,8 +45,16 @@ class MyApp extends StatelessWidget{
 
 }
 
-class MyHomePage extends StatelessWidget{
+class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -79,10 +87,10 @@ class MyHomePage extends StatelessWidget{
                 text: "Car",
               ),
               Tab(icon: Icon(Icons.directions_transit),
-              text: "Bus",
+                text: "Bus",
               ),
               Tab(icon: Icon(Icons.directions_bike),
-              text: "Bicycle",
+                text: "Bicycle",
               ),
               Tab(icon: Icon(Icons.help_center),
                 text: "Help",
@@ -103,7 +111,6 @@ class MyHomePage extends StatelessWidget{
       ),
     );
   }
-
 }
 
 Widget tab1(){
@@ -119,7 +126,6 @@ Widget tab1(){
 
 Widget tab4(){
   return Container(
-
     decoration: const BoxDecoration(
       color: Colors.white,
       image: DecorationImage(
@@ -133,28 +139,34 @@ Widget tab4(){
 }
 
 Widget tab2(){
+
+  int count = 0;
+
+  void increment(){
+    setState((){
+      count = count + 1;
+        print(count);
+    });
+  }
+
   return Scaffold(
-    body: Container(
-
-      color: Colors.blue,
-      height: 250,
-
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
+    body: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: const <Widget>[
-          Text('Testing One',
-            style: TextStyle(fontSize: 18,color: Colors.white),
+          Text('You Have Pushed Button Times',
+            style: TextStyle(fontSize: 18,color: Colors.blueAccent),
           ),
-          Text('Testing Two',
-            style: TextStyle(fontSize: 18,color: Colors.white),
+          Text(
+            "0",
+            style: TextStyle(fontSize: 28,color: Colors.blueAccent),
           ),
-          Text('Testing Three',
-            style: TextStyle(fontSize: 18,color: Colors.white),
-          ),
-
         ],
       ),
+    ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: increment,
+      child: const Icon(Icons.add),
     ),
   );
 }
@@ -166,7 +178,7 @@ Widget tab3(){
       width: double.infinity,
       height: 65,
       alignment: Alignment.center,
-      color: Colors.black54,
+      color: Colors.lightBlue,
       child: const Text(
         'Flutter Testing App',
         style: TextStyle(
