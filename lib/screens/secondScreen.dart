@@ -11,12 +11,12 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text('Flutter Navigation',
+        title:  const Text('Flutter Navigation',
         ),
         leading: IconButton(
-          icon:  Icon(Icons.home),
+          icon:  const Icon(Icons.home),
           onPressed: (){
-            Navigator.pop(context, MyHomePage());
+            Navigator.pop(context, const MyHomePage());
           },
          )
         ),
@@ -26,7 +26,7 @@ class SecondScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(text,
-              style: TextStyle(fontSize: 18,color: Colors.white),
+              style: const TextStyle(fontSize: 18,color: Colors.white),
             ),
           ],
         ),
